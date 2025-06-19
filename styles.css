@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+}
+
+#topBackground {
+    background: url(assets/images/background-pattern-desktop.svg) no-repeat;
+    background-size: 100%;
+    min-width: 100vw;
+    min-height: 25vh;
+}
+
+@media (max-width: 1024px) {
+    #topBackground {
+        background: url(assets/images/background-pattern-mobile.svg) no-repeat;
+        background-size: cover;
+        min-width: 100vw;
+    }
+}
+
+.icon,.icon1,.icon2,.icon3 {
+    background: url(assets/images/icon-plus.svg) no-repeat;
+    background-size: contain;
+    min-height: 40px;
+    min-width: 40px;
+    cursor: pointer;
+}
+
+.Accordance > label:hover {
+    background-color: #F5F5F5;
+
+
+}
+
+.accordanceOption {
+    display: none;
+    transition: all ease-out 3s;
+
+
+}
+
+/* This targets when the checkbox is checked and shows the .accordanceOption */
+#checkbox:checked~ .accordanceOption {
+    display: block;
+    transition: all ease-out;
+    transition-duration: 3s;
+}
+
+#checkbox1:checked~ .accordanceOption {
+    display: block;
+    transition: all ease-out;
+    transition-duration: 3s;
+}
+
+#checkbox2:checked~ .accordanceOption {
+    display: block;
+    transition: all ease-out;
+    transition-duration: 3s;
+}
+#checkbox3:checked~ .accordanceOption {
+    display: block;
+    transition: all ease-out;
+    transition-duration: 3s;
+}
+
+hr{
+    color:lightgrey;
+}

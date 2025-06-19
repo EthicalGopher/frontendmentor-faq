@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | FAQ accordion</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="h-screen w-[100vw] flex flex-col justify-center items-center">
+<div id="background" class="h-screen -z-1 bg-purple-100 w-[100vw] " style="position: absolute;">
+
+<div id="topBackground"  >
+</div>
+
+
+</div>
+<main class="z-2 lg:w-125 w-80 bg-white p-7  rounded-md">
+  <div class="flex flex-row gap-7 items-center">
+   <img class="h-7" src="assets/images/icon-star.svg" alt="star">
+  <h1 class="font-semibold text-4xl"> FAQs</h1>
+  </div>
+
+
+
+  <div class="  mt-8 Accordance flex flex-col gap-5" >
+  <input type="checkbox" id="checkbox" class="hidden" />
+    <label for="checkbox" class="flex flex-row gap-4  inset-0 justify-between" >
+
+  <p class="font-[600] " >
+    What is Frontend Mentor, and how will it help me?
+  </p>
+      <div class="icon"></div>
+<!--    <img class="cursor-pointer" src="assets/images/icon-minus.svg" alt="minus" >-->
+
+    </label>
+<p class="text-gray-700 accordanceOption">
+
+  Frontend Mentor offers realistic coding challenges to help developers improve their
+  frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for
+  all levels and ideal for portfolio building.
+</p>
+    <hr/>
+  </div>
+
+
+
+  <div class="  mt-8 Accordance flex flex-col gap-5" >
+    <input type="checkbox" id="checkbox1" class="hidden" />
+    <label for="checkbox1" class="flex flex-row gap-4  inset-0 justify-between" >
+
+      <p class="font-[600] " >
+        Is Frontend Mentor free?
+      </p>
+      <div class="icon1"></div>
+
+
+    </label>
+    <p class="text-gray-700 accordanceOption">
+
+      Yes, Frontend Mentor offers both free and premium coding challenges, with the free
+      option providing access to a range of projects suitable for all skill levels.
+    </p>
+    <hr/>
+  </div>
+
+
+  <div class="  mt-8 Accordance flex flex-col gap-5" >
+    <input type="checkbox" id="checkbox2" class="hidden" />
+    <label for="checkbox2" class="flex flex-row gap-4  inset-0 justify-between" >
+
+      <p class="font-[600] " >
+        Can I use Frontend Mentor projects in my portfolio?
+      </p>
+      <div class="icon2"></div>
+
+
+    </label>
+    <p class="text-gray-700 accordanceOption">
+
+      Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an excellent
+      way to showcase your skills to potential employers!
+    </p>
+    <hr/>
+  </div>
+
+
+
+
+  <div class="  mt-8 Accordance flex flex-col gap-5" >
+    <input type="checkbox" id="checkbox3" class="hidden" />
+    <label for="checkbox3" class="flex flex-row gap-4  inset-0 justify-between" >
+
+      <p class="font-[600] " >
+        How can I get help if I'm stuck on a Frontend Mentor challenge?
+      </p>
+      <div class="icon3"></div>
+
+
+    </label>
+    <p class="text-gray-700 accordanceOption">
+
+      The best place to get help is inside Frontend Mentor's Discord community. There's a help
+      channel where you can ask questions and seek support from other community members.
+
+    </p>
+
+  </div>
+
+
+
+
+
+</main>
+
+
+
+  
+
+</body>
+<script>
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+  const icons = document.querySelectorAll('[class^="icon"]');
+
+  checkboxes.forEach((checkbox, index) => {
+    checkbox.addEventListener("change", function() {
+      if (this.checked) {
+
+        checkboxes.forEach((cb, i) => {
+          if (i !== index) {
+            cb.checked = false;
+
+            icons[i].style.background = "url(assets/images/icon-plus.svg) no-repeat";
+            icons[i].style.backgroundSize = "contain";
+          }
+        });
+
+
+        icons[index].style.background = "url(assets/images/icon-minus.svg) no-repeat";
+        icons[index].style.backgroundSize = "contain";
+      } else {
+
+        icons[index].style.background = "url(assets/images/icon-plus.svg) no-repeat";
+        icons[index].style.backgroundSize = "contain";
+      }
+    });
+  });
+
+  // Initialize all icons to plus
+  window.addEventListener('DOMContentLoaded', () => {
+    icons.forEach(icon => {
+      icon.style.background = "url(assets/images/icon-plus.svg) no-repeat";
+      icon.style.backgroundSize = "contain";
+    });
+  });
+</script>
+</html>
